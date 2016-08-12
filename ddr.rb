@@ -29,9 +29,11 @@ end
 # do standard roll
 def die_roll(roll, die, mod)
   if mod == ""
-    puts "Rolling: #{roll.to_s}d#{die.to_s}."
+    text = "Rolling: #{roll.to_s}d#{die.to_s}"
+    puts "\n#{text.upcase.center(60)}\n\n"
   else
-    puts "Rolling: #{roll.to_s}d#{die.to_s} + #{mod.to_s}."
+    text = "Rolling: #{roll.to_s}d#{die.to_s} + #{mod.to_s}."
+    puts "\n#{text.upcase.center(60)}\n\n"
   end
 
   rolls = roll(roll, die)
@@ -46,7 +48,8 @@ end
 
 # do a stat roll
 def stat_roll(roll, die)
-  puts "Rolling Stats: #{roll.to_s}d#{die.to_s} drop lowest."
+  text = "Rolling Stats: #{roll.to_s}d#{die.to_s} drop lowest."
+  puts "\n#{text.upcase.center(60)}\n\n"
 
   6.times do
     rolls = roll(roll, die)
@@ -63,10 +66,12 @@ def help
   print "DnD dice roller.\n"
   print "Copyright (c) 2016 Damien Hodgkin.\n"
   print "\n"
-  print "usage: ddr [n1]d[n2][+n3]\n"
+  print "usage: ddr [n1]d[n2][+n3] or ddr s\n"
   print "\tn1 is the amount of times to roll the dice\n"
   print "\tn2  is the type of die ie. 6\n"
   print "\tn3 is any modifier to add to the roll\n"
+  print "\n"
+  print "\ts is a stat roll\n"
 end
 
 opts = parse_opt(ARGV[0])
