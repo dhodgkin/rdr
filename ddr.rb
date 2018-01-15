@@ -40,7 +40,7 @@ def die_roll(roll, die, mod)
   sum = rolls.reduce(:+)
 
   if mod == ""
-    puts "Final: #{sum.to_s}"
+    puts "Rolls: #{rolls.to_s}\nFinal: #{sum.to_s}"
   else
     puts "Final: #{sum.to_s} + #{mod.to_s} = #{sum.to_i + mod.to_i}"
   end
@@ -54,11 +54,13 @@ def stat_roll(roll, die)
   6.times do
     rolls = roll(roll, die)
     rolls.sort!
+    lowest = rolls[0]
     rolls.delete_at(0)
     
-    r = sum = rolls.reduce(:+)
+    sum = rolls.reduce(:+)
     
-    puts r.to_s
+    puts "#{rolls.to_s} [dropped: #{lowest.to_s}] = #{sum.to_s}"
+    #puts r.to_s
   end
 end
 
