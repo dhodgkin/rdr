@@ -1,3 +1,31 @@
+def parse(rules)
+    matches = []
+    # regex to match format 3d6k3 and such.
+    # (?<rolls>\d+)(?<type>[de])(?<sides>\d+)(?<sign>.)(?<mod>\d+)
+
+    pat = /(?<rolls>\d+)?d(?<sides>\d+)(?<sign>\+|\-)?(?<mod>\d+)?/
+    rules.scan(pat) { matches << $~ }
+    result = 0
+    matches.each do |match|
+        c = Hash[ match.names.zip( match.captures ) ]
+        c['rolls'] = 1 unless c['rolls'] 
+        
+        r = roll(c['rolls'].to_i, c['sides'].to_i)
+        
+        if c['sign'] == '-'
+            puts "#{r} - #{c['mod'].to_i}"
+            r = r - c['mod'].to_i
+        else
+            puts "#{r} + #{c['mod'].to_i}"
+            r = r + c['mod'].to_i
+        end
+        
+        #puts r
+        return r
+    end
+    
+end
+
 def roll(amount = 0, sides = 0)
     #this is the function that gets a random roll with the amount of sides and the amount of dice inputted.
     srand
@@ -13,14 +41,6 @@ while true
     if raw_input == "exit"
         abort("May your rolls be ever natural.")
     end
-    proc_input = raw_input.tr("^0-9", " ")
-    #this keeps all the numbers from the string input. 
-    output = proc_input.split()
-    if (output[2]) == nil 
-        mod = 0
-    else 
-        mod = output[2]
-    end
-    fin = roll(output[0], output[1]) + mod.to_i
+    fin = parse(raw_input)
     puts "#{fin.to_s}"
 end
