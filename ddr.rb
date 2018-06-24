@@ -1,5 +1,9 @@
+# ---------------------------
 # ddr - DnD dice roller
-# Copyright (c) 2016 Damien Hodgkin
+# Copyright (c) 2016
+# Author: Damien Hodgkin
+# Email: <dracul01@gmail.com>
+# ---------------------------
 
 # parse commandline arguments and put into an array
 def parse_opt(s)
@@ -56,9 +60,9 @@ def stat_roll(roll, die)
     rolls.sort!
     lowest = rolls[0]
     rolls.delete_at(0)
-    
+
     sum = rolls.reduce(:+)
-    
+
     puts "#{rolls.to_s} [dropped: #{lowest.to_s}] = #{sum.to_s}"
     #puts r.to_s
   end
