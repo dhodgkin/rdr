@@ -1,5 +1,5 @@
 # ---------------------------
-# ddr - DnD dice roller
+# rdr - Rpg Dice Roller
 # Copyright (c) 2016
 # Author: Damien Hodgkin
 # Email: <dracul01@gmail.com>
@@ -69,10 +69,10 @@ def stat_roll(roll, die)
 end
 
 def help
-  print "DnD dice roller.\n"
+  print "Rpg Dice Roller.\n"
   print "Copyright (c) 2016 Damien Hodgkin.\n"
   print "\n"
-  print "usage: ddr [n1]d[n2][+n3] or ddr s\n"
+  print "usage: rdr [n1]d[n2][+n3] or rdr s\n"
   print "\tn1 is the amount of times to roll the dice\n"
   print "\tn2  is the type of die ie. 6\n"
   print "\tn3 is any modifier to add to the roll\n"
