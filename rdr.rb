@@ -1,3 +1,5 @@
+#!/usr/bin/ruby
+
 # ---------------------------
 # rdr - Rpg Dice Roller
 # Copyright (c) 2016
