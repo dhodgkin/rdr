@@ -1,0 +1,46 @@
+# This is the default format. 
+# For more see: https://github.com/mojombo/jekyll/wiki/Permalinks
+permalink: pretty  #/:categories/:year/:month/:day/:title 
+paginate: 5
+excerpt_separator: <!--more-->
+
+exclude: [".rvmrc", ".rbenv-version", "README.md", "Rakefile", "changelog.md"]
+#auto: true
+markdown: kramdown
+highlighter: rouge
+
+plugins: [jekyll-paginate]
+
+# Themes are encouraged to use these universal variables 
+# so be sure to set them if your theme uses them.
+#
+title : rdr
+tagline: A Simple Dice Roller for Tabletop RPGs
+author :
+  name : Damien Hodgkin
+  email : dracul01@gmail.com
+  github : http://github.com/dhodgkin
+  twitter : http://twitter.com/dthodgkin
+  #feedburner : feedname
+
+# Settings for comments helper
+# Set 'provider' to the comment provider you want to use.
+# Set 'provider' to false to turn commenting off globally.
+#
+comments :
+  provider : facebook
+  facebook :
+    appid : 128742020513581
+    num_posts: 5
+    width: 580
+    colorscheme: dark
+
+# The production_url is only used when full-domain names are needed
+# such as sitemap.txt 
+# Most places will/should use BASE_PATH to make the urls
+#
+# If you have set a CNAME (pages.github.com) set your custom domain here.
+# Else if you are pushing to username.github.com, replace with your username.
+# Finally if you are pushing to a GitHub project page, include the project name at the end.
+#
+production_url : http://dhodgkin.github.io/rdr

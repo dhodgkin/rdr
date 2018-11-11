@@ -1,0 +1,8 @@
+{% if site.JB.comments.provider and page.comments != false %}
+
+{% case site.JB.comments.provider %}
+{% when "facebook" %}
+  {% include JB/comments-providers/facebook %}
+{% endcase %}
+
+{% endif %}

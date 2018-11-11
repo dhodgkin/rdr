@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+  {% include themes/dhodgkin/grey-matter.html %}
+  <body>
+    {% include themes/dhodgkin/fb-jssdk.html %}
+    {% include JB/setup %}
+
+<!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
+<!-- Site Layout Begins                                                      -->
+<!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
+
+    {% include themes/dhodgkin/header.html %}
+
+    {% include themes/dhodgkin/sidebar.html %}
+
+    <!-- Main Content Area start -->
+    <div class="container">
+      <div id="main_content">{{ content }}</div>
+    </div>
+    <!-- Main Content Area end   -->
+
+    {% include themes/dhodgkin/footer.html %}
+
+<!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
+<!-- Site Layout Ends                                                        -->
+<!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
+    
+  </body>
+</html>

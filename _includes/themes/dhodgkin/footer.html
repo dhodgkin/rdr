@@ -1,0 +1,33 @@
+    <!-- Page Footer start -->
+    <footer class="footer">
+      <div>
+        <div class="copytext">
+          <p>All content belongs to me unless otherwise stated.</p>
+          <p>Find me here <a href="{{ site.author.github }}">{{ site.author.github }}</a></p>
+          <p>Copyright © by {{ site.author.name }} &lt;{{ site.author.email }}&gt; 2012.<br>All Right Reserved.</p>
+        </div>
+      </div>
+
+      <div id="thanks">
+        <div id="thanksbox" class="thanksbox" style="display: none; ">
+          <p class="thanks">Thanks <a href="http://github.com/mojombo/">Tim Preston-Werner</a> for some CSS code I used from your site.<br>And some small snippets from your layout to get posts showing.</p>
+          <p class="thanks">Thanks to <a href="http://github.com">GitHub</a> for an amazingly cool tool.</p>
+          <p class="thanks">And thanks to anyone who is not mentioned.<br>You all helped me in various ways.</p>
+        </div>
+        <ul class="thanks-actions"></ul>
+      </div>
+    </footer>
+    <!-- Page Footer end -->
+
+    <script> //<![CDATA[    
+       $(document).ready(function(){
+          $("#thanksbox").hide();
+          $("#thanks ul").prepend("<li class='thanks'><a href='' title='Thanks'>Thanks</a></li>");
+          $(".thanks-actions li.thanks a").click(function(event) {
+            $(this).parents("ul").prev("#thanksbox").toggle();
+            event.preventDefault();
+          });
+       });
+     //]]></script>
+
+    <a href="http://github.com/dhodgkin"><img style="position: absolute; top: 0; right: 0; border: 0;" src="http://s3.amazonaws.com/github/ribbons/forkme_right_red_aa0000.png" alt="Fork me on GitHub" /></a>
