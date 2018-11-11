@@ -9,10 +9,10 @@ title: rdr - Home
       <div id="post">
       {% if post.content contains '<!--more-->' %}
           <div>{{ post.content | split:'<!--more-->' | first }}</div>
-          <p><a href="{{ post.url }}">&lt;read more and comment...&gt;</a></p>
+          <p><a href="{{ post.url | prepend:site.baseurl }}">&lt;read more and comment...&gt;</a></p>
       {% else %}
           <div>{{ post.content }}</div>
-          <p><a href="{{ post.url }}">&lt;read more and comment...&gt;</a></p>
+          <p><a href="{{ post.url | prepend:site.baseurl }}">&lt;read more and comment...&gt;</a></p>
       {% endif %}
       </div>
       <br>
