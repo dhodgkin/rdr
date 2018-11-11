@@ -10,3 +10,5 @@ tags: []
 
 posted on: {{ page.date | date_to_string }}
 {: .meta}
+
+I got a base for the rdr site up and running. 
